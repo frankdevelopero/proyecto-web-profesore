@@ -8,3 +8,9 @@ class LoginView(View):
     def get(self, request):
 
         return render(request, 'frontend/login.html')
+
+
+class RegisterView(View):
+    def get(self, request):
+
+        return render(request, 'frontend/register.html')
