@@ -32,26 +32,36 @@
                 <div class="single-page">
                     <div class="col-lg-5 col-xl-4 col-md-6 d-block mx-auto">
                         <div class="wrapper wrapper2">
-                            <form id="login" class="card-body" tabindex="500">
+                            <form id="login" class="card-body" tabindex="500" method="post">
+                                {% csrf_token %}
+                                {% for error in errors %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
                                 <h3>Registro</h3>
                                 <div class="mail">
-                                    <input type="email" name="mail">
+                                    {{ form.firstname }}
                                     <label>Nombres</label>
                                 </div>
                                 <div class="mail">
-                                    <input type="email" name="mail">
+                                    {{ form.lastname }}
                                     <label>Apellidos</label>
                                 </div>
                                 <div class="mail">
-                                    <input type="email" name="mail">
+                                    {{ form.phone }}
+                                    <label>Celular</label>
+                                </div>
+                                <div class="mail">
+                                    {{ form.email }}
                                     <label>Correo electrónico</label>
                                 </div>
                                 <div class="passwd">
-                                    <input type="password" name="password">
+                                    {{ form.password }}
                                     <label>Contraseña</label>
                                 </div>
                                 <div class="submit">
-                                    <a class="btn btn-primary btn-block" href="index.html">Crear cuenta</a>
+                                    <input type="submit" class="btn btn-primary btn-block" value="Crear cuenta">
                                 </div>
                                 <p class="text-dark mb-0">¿Ya tienes una cuenta?<a href="{% url 'login' %}"
                                                                                    class="text-primary ml-1">Inicia

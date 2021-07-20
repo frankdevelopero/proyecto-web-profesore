@@ -1,0 +1,171 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+    Reservar clase
+{% endblock %}
+{% load static %}
+{% block content %}
+    <section class="sptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card mb-xl-0">
+                        <div class="card-header"><h3 class="card-title">Reservar una clase</h3></div>
+                        <div class="card-body">
+                            <form id="commentForm" method="get" class="form-horizontal mb-0" novalidate="novalidate" action="{% url 'payment' teacher.id 2 %}">
+                                {% csrf_token %}
+                                <div id="rootwizard" class="border pt-0">
+                                    <ul class="nav nav-tabs nav-justified navtab-wizard bg-muted">
+
+                                        <li class="nav-item"><a href="#second" data-toggle="tab"
+                                                                class="nav-link font-bold active">Resumen</a></li>
+                                        <li class="nav-item"><a href="#third" data-toggle="tab"
+                                                                class="nav-link font-bold">Sobre el estudiante</a></li>
+                                        <li class="nav-item"><a href="#fourth" data-toggle="tab"
+                                                                class="nav-link font-bold">Pago</a></li>
+                                    </ul>
+                                    <div class="tab-content card-body mt-3 mb-0 b-0">
+
+                                        <div class="tab-pane fade active show" id="second">
+                                            <div class="control-group form-group">
+                                                <label class="form-label text-dark">Profesor</label>
+                                                <div class="d-flex ad-post-details">
+                                                    <b>{{ teacher.user.user.first_name }} {{ teacher.user.user.last_name }}</b>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="control-group form-group">
+                                                <label class="form-label text-dark">Precio por hora</label>
+                                                <div class="d-md-flex ad-post-details">
+                                                    <label
+                                                            class="custom-control custom-radio mb-2 mr-4"> <input
+                                                            type="radio" class="custom-control-input" name="radios1"
+                                                            value="option1" checked=""> <span
+                                                            class="custom-control-label"><a href="#"  class="text-muted">S/ {{ teacher.ammount }}</a></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="third">
+                                            <div class="control-group form-group">
+                                                <label class="form-label">Nombres</label>
+                                                <input type="text" class="form-control required" placeholder="" value="{{ request.user.first_name }}"
+                                                       aria-required="true">
+                                            </div>
+                                            <div class="control-group form-group">
+                                                <label class="form-label">Apellidos</label>
+                                                <input type="text" class="form-control required" placeholder="" value="{{ request.user.last_name }}"
+                                                       aria-required="true">
+                                            </div>
+                                            <div class="control-group form-group">
+                                                <label class="form-label">Correo</label>
+                                                <input type="text" class="form-control required" placeholder="" value="{{ request.user.email }}"
+                                                       aria-required="true">
+                                            </div>
+
+                                            <div class="control-group form-group">
+                                                <label class="form-label">Cel o whatsapp</label>
+                                                <input type="number" class="form-control required" value="{{ customuser.phone }}"
+                                                       placeholder="" aria-required="true">
+                                            </div>
+
+                                             <div class="control-group form-group">
+                                                <label class="form-label">Fecha y hora de la clase</label>
+                                                <input type="datetime-local" class="form-control required" name="booking_to"
+                                                       placeholder="" aria-required="true">
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane fade" id="fourth">
+                                            <div class="panel panel-primary">
+                                                <div class=" tab-menu-heading border-0 pl-0 pr-0 pt-0">
+                                                    <div class="tabs-menu1 "> <!-- Tabs -->
+                                                        <ul class="nav panel-tabs">
+                                                            <li><a href="#tab5" class="active" data-toggle="tab">Tarjeta
+                                                                de crédito o débito</a></li>
+                                                            <li><a href="#tab6" data-toggle="tab">Yape</a></li>
+                                                            <li><a href="#tab7" data-toggle="tab">Transferencia
+                                                                bancaria</a></li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-body tabs-menu-body pl-0 pr-0 border-0">
+                                                    <div class="tab-content">
+                                                        <div class="tab-pane active " id="tab5">
+
+                                                            <div class="form-group"><label class="form-label">Número de
+                                                                tarjeta</label>
+                                                                <div class="input-group"><input type="text"
+                                                                                                class="form-control"
+                                                                                                placeholder="">
+                                                                    <span class="input-group-append"> <button
+                                                                            class="btn btn-info" type="button"><i
+                                                                            class="fa fa-cc-visa"></i> &nbsp; <i
+                                                                            class="fa fa-cc-amex"></i> &nbsp; <i
+                                                                            class="fa fa-cc-mastercard"></i></button> </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-8">
+                                                                    <div class="form-group mb-sm-0"><label
+                                                                            class="form-label">Fec. de
+                                                                        expiración</label>
+                                                                        <div class="input-group">
+                                                                            <input type="number" class="form-control"
+                                                                                   placeholder="MM"
+                                                                                   name="expiremonth">
+                                                                            <input type="number" class="form-control"
+                                                                                   placeholder="YY" name="expireyear">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4 ">
+                                                                    <div class="form-group mb-0"><label
+                                                                            class="form-label">CVV <i
+                                                                            class="fa fa-question-circle"></i></label>
+                                                                        <input type="number" class="form-control"
+                                                                               required="" aria-required="true"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane " id="tab6">
+                                                            <h6
+                                                                    class="font-weight-semibold">Paga con Yape
+                                                                fácil</h6>
+                                                            <p class="mb-0"><strong>Nota:</strong> Debes yapearnos a
+                                                                nuestro número de celular <b>987987987</b> y enviarnos
+                                                                una captura a nuestro whatsapp. </p>
+                                                            <p>
+                                                                <input type="submit" class="btn btn-primary mt-3" value="Pagar y reservar">
+
+                                                            </p>
+                                                        </div>
+
+
+                                                        <div class="tab-pane " id="tab7">
+                                                            <h6 class="font-weight-semibold">Paga con Transferencia
+                                                                bancaria</h6>
+                                                            <p class="mb-0"><strong>Nota:</strong> Debes depositarnos a
+                                                                nuestro número de cuenta <b>2255004579887</b> y
+                                                                enviarnos una captura a nuestro whatsapp. </p>
+                                                            <p>
+                                                                <input type="submit" class="btn btn-primary mt-3" value="Pagar y reservar">
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- end row --> </div>
+    </section>
+
+{% endblock %}

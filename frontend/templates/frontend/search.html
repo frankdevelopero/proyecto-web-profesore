@@ -1,0 +1,52 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+    Buscar: {{ query }}
+{% endblock %}
+{% load static %}
+{% block content %}
+
+    <section class="sptb">
+        <div class="container">
+            <div class="section-title center-block text-center"><h2>Resultados para <span>{{ query }}</span></h2>
+
+                {% for techer in techers %}
+                    <div class="owl-item cloned mt-3" style="width: 275.25px; margin-right: 25px;">
+                        <div class="item">
+                            <div class="card mb-0 overflow-hidden">
+                                <div class="item-card7-imgs img-circle"><a href="{% url 'profile' techer.id %}"></a>
+                                    <img
+                                            src="{{ techer.image.url }}" alt="Dash"
+                                            class="  p-0"></div>
+                                <div class="card-body">
+                                    <div class="item-card7-desc">
+                                        <div class="item-card7-text"><a href="{% url 'profile' techer.id %}"
+                                                                        class="text-dark text-header"><h3
+                                                class="mb-1">{{ techer.user.user.first_name }} {{ techer.user.user.last_name }}</h3></a>
+                                        </div>
+
+                                        <p class="mb-0">{{ techer.description|slice:':30' }}...</p>
+                                        <a href="{% url 'profile' techer.id %}" class="btn btn-primary mt-3">
+                                            Reservar</a></div>
+                                </div>
+                                <div class="card-footer">
+                                    <ul class="item-cards7-ic software-list mb-0 mt-3">
+                                        <li><a href="#" class="icons text-muted "><i
+                                                class="fa fa-money text-muted mr-1"></i>S/ {{ techer.ammount }}</a>
+                                        </li>
+                                        <li><a href="#" class="icons text-muted "><i
+                                                class="fa fa-book text-muted mr-1"></i> {{ techer.category.name }}
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+    </section>
+
+{% endblock %}

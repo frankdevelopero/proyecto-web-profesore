@@ -1,351 +1,370 @@
 <!doctype html>
 {% load static %}
 <html lang="es" dir="ltr">
-	<head>
-		<meta charset="UTF-8">
-		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="msapplication-TileColor" content="#0f75ff">
-		<meta name="theme-color" content="#2ddcd3">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
-		<meta name="description" content="Applist - Responsive Bootstrap apps softwares directory and multipurpose Marketplace HTML Template">
-		<meta name="keywords" content="apps marketplace html template, app market html template, softwares app html template, app marketplace html template,software marketplace html template, web applications listing marketplace template,business softwares marketplace template,marketplace,app marketplace,marketplace template,html marketplace,marketplace html,apps marketplace,apps shop market template html,apps and softwares marketplace template">
-		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-TileColor" content="#0f75ff">
+    <meta name="theme-color" content="#2ddcd3">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="description"
+          content="Applist - Responsive Bootstrap apps softwares directory and multipurpose Marketplace HTML Template">
+    <meta name="keywords"
+          content="apps marketplace html template, app market html template, softwares app html template, app marketplace html template,software marketplace html template, web applications listing marketplace template,business softwares marketplace template,marketplace,app marketplace,marketplace template,html marketplace,marketplace html,apps marketplace,apps shop market template html,apps and softwares marketplace template">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 
-		<!-- Title -->
-		<title>{% block title %}{% endblock %}</title>
+    <!-- Title -->
+    <title>{% block title %}{% endblock %}</title>
 
-		<!-- Bootstrap Css -->
-		<link href="{% static 'frontend/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <!-- Bootstrap Css -->
+    <link href="{% static 'frontend/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
 
-		<!-- Dashboard Css -->
-		<link href="{% static 'frontend/css/style.css' %}" rel="stylesheet" />
+    <!-- Dashboard Css -->
+    <link href="{% static 'frontend/css/style.css' %}" rel="stylesheet"/>
 
-		<!-- Font-awesome  Css -->
-		<link rel="stylesheet" href="{% static 'frontend/fonts/fonts/font-awesome.min.css' %}">
+    <!-- Font-awesome  Css -->
+    <link rel="stylesheet" href="{% static 'frontend/fonts/fonts/font-awesome.min.css' %}">
 
-		<!--Horizontal Menu-->
-		<link href="{% static 'frontend/plugins/Horizontal2/Horizontal-menu/color-skins/color.css' %}" rel="stylesheet" />
+    <!--Horizontal Menu-->
+    <link href="{% static 'frontend/plugins/Horizontal2/Horizontal-menu/color-skins/color.css' %}" rel="stylesheet"/>
 
-		<!--Select2 Plugin -->
-		<link href="{% static 'frontend/plugins/select2/select2.min.css' %}" rel="stylesheet" />
+    <!--Select2 Plugin -->
+    <link href="{% static 'frontend/plugins/select2/select2.min.css' %}" rel="stylesheet"/>
 
-		<!-- Cookie css -->
-		<link href="{% static 'frontend/plugins/cookie/cookie.css' %}" rel="stylesheet">
+    <!-- Cookie css -->
+    <link href="{% static 'frontend/plugins/cookie/cookie.css' %}" rel="stylesheet">
 
-		<!-- Owl Theme css-->
-		<link href="{% static 'frontend/plugins/owl-carousel/owl.carousel.css' %}" rel="stylesheet" />
+    <!-- Owl Theme css-->
+    <link href="{% static 'frontend/plugins/owl-carousel/owl.carousel.css' %}" rel="stylesheet"/>
 
-		<!-- Custom scroll bar css-->
-		<link href="{% static 'frontend/plugins/scroll-bar/jquery.mCustomScrollbar.css' %}" rel="stylesheet" />
+    <!-- Custom scroll bar css-->
+    <link href="{% static 'frontend/plugins/scroll-bar/jquery.mCustomScrollbar.css' %}" rel="stylesheet"/>
 
-		<!--Font icons-->
-		<link href="{% static 'frontend/plugins/iconfonts/plugin.css' %}" rel="stylesheet">
-		<link href="{% static 'frontend/plugins/iconfonts/icons.css' %}" rel="stylesheet">
+    <!--Font icons-->
+    <link href="{% static 'frontend/plugins/iconfonts/plugin.css' %}" rel="stylesheet">
+    <link href="{% static 'frontend/plugins/iconfonts/icons.css' %}" rel="stylesheet">
 
-		<!-- COLOR-SKINS -->
-		<link id="theme" rel="stylesheet" type="text/css" media="all" href="{% static 'frontend/webslidemenu/color-skins/color1.css' %}" />
-		<link rel="stylesheet" href="{% static 'frontend/webslidemenu/demo.css' %}"/>
+    <!-- COLOR-SKINS -->
+    <link id="theme" rel="stylesheet" type="text/css" media="all"
+          href="{% static 'frontend/webslidemenu/color-skins/color1.css' %}"/>
+    <link rel="stylesheet" href="{% static 'frontend/webslidemenu/demo.css' %}"/>
 
-	</head>
-	<body>
+</head>
+<body>
 
-		<!--Loader-->
-		<div id="global-loader">
-			<img src="{% static 'frontend/images/other/loader.gif' %}" class="loader-img " alt="">
-		</div>
+<!--Loader-->
+<div id="global-loader">
+    <img src="{% static 'frontend/images/other/loader.gif' %}" class="loader-img " alt="">
+</div>
 
-       <!--Topbar-->
-		<div class="header-main">
-			<div class="top-bar">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-8 col-lg-6 col-sm-4 col-7">
-							<div class="top-bar-left d-flex">
-							    <div class="clearfix">
-									<ul class="socials d-lg-none">
-										<li>
-											<a class="social-icon text-dark" href="#"><i class="fa fa-facebook"></i></a>
-										</li>
-										<li>
-											<a class="social-icon text-dark" href="#"><i class="fa fa-twitter"></i></a>
-										</li>
-										<li>
-											<a class="social-icon text-dark" href="#"><i class="fa fa-linkedin"></i></a>
-										</li>
-										<li>
-											<a class="social-icon text-dark" href="#"><i class="fa fa-google-plus"></i></a>
-										</li>
-									</ul>
-								</div>
-								<div class="clearfix">
-									<div class="header-search-logo pt-0 pb-0 ">
-										<a href="#" class="logo-img"></a>
-									</div>
-								</div>
+<!--Topbar-->
+<div class="header-main">
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-6 col-sm-4 col-7">
+                    <div class="top-bar-left d-flex">
+                        <div class="clearfix">
+                            <ul class="socials d-lg-none">
+                                <li>
+                                    <a class="social-icon text-dark" href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="social-icon text-dark" href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a class="social-icon text-dark" href="#"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                                <li>
+                                    <a class="social-icon text-dark" href="#"><i class="fa fa-google-plus"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clearfix">
+                            <div class="header-search-logo pt-0 pb-0 ">
+                                <a href="{% url 'index' %}" class="logo-img"></a>
+                            </div>
+                        </div>
 
-							</div>
-						</div>
-						<div class="col-xl-4 col-lg-6 col-sm-8 col-5">
-							<div class="top-bar-right">
-								<ul class="custom ">
-									<li>
-										<a href="{% url 'login' %}" class="text-dark"><i class="fa fa-sign-in mr-1 login-details"></i> <span>Inica sesión</span></a>
-									</li>
-                                    <li>
-										<a href="{% url 'register' %}" class="text-dark"><i class="fa fa-user mr-1 login-details"></i><span >Regístrate</span></a>
-									</li>
-									<li class="dropdown">
-										<a href="#" class="text-dark" data-toggle="dropdown"><i class="fa fa-home mr-1 login-details"></i><span> Mi cuenta</span></a>
-										<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-											<a href="#" class="dropdown-item" >
-												<i class="dropdown-icon icon icon-user"></i> Mi cuenta
-											</a>
-											<a class="dropdown-item" href="#">
-												<i class="dropdown-icon icon icon-speech"></i> Mis clases
-											</a>
-											<a class="dropdown-item" href="#">
-												<i class="dropdown-icon icon icon-bell"></i> Notificaciones
-											</a>
-											<a href="#" class="dropdown-item" >
-												<i class="dropdown-icon  icon icon-settings"></i> Ajustes
-											</a>
-											<a class="dropdown-item" href="#">
-												<i class="dropdown-icon icon icon-power"></i> Cerrar sesión
-											</a>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-sm-8 col-5">
+                    <div class="top-bar-right">
+                        <ul class="custom ">
+                            {% if request.user.is_authenticated %}
+                                <li class="dropdown">
+                                    <a href="#" class="text-dark" data-toggle="dropdown"><i
+                                            class="fa fa-home mr-1 login-details"></i><span> Mi cuenta</span></a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a href="{% url 'dashboard' %}" class="dropdown-item">
+                                            <i class="dropdown-icon icon icon-user"></i> Mi cuenta
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="dropdown-icon icon icon-speech"></i> Mis clases
+                                        </a>
 
-			<!-- Mobile Header -->
-			<div class="horizontal-header clearfix ">
-				<div class="container">
-					<a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
-					<span class="smllogo"><img src="{% static 'frontend/images/brand/logo.png' %}" width="120" alt=""/></span>
-					<a href="tel:245-6325-3256" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
-				</div>
-			</div>
-			<!-- /Mobile Header -->
-
-			<!-- Horizontal-navigation -->
-			<div class="sticky">
-				<div class="header-style horizontal-main  bg-dark-transparent clearfix">
-					<div class="horizontal-mainwrapper container clearfix">
-						<!--Nav-->
-						<nav class="horizontalMenu clearfix d-md-flex">
-							<ul class="horizontalMenu-list">
-								<li aria-haspopup="true"><a href="#"><span><i class="fa fa-home"></i>Inicio </span></a>
-
-								</li>
-								<li aria-haspopup="true"><a href="#"><span><i class="fa fa-calculator"></i>Matemática<i class="fa fa-angle-down ml-1 m-0"></i></span></a>
-									<ul class="sub-menu">
-										<li aria-haspopup="true"><a href="#">Raz. Matemático </a></li>
-										<li aria-haspopup="true"><a href="#">Álgebra</a></li>
-										<li aria-haspopup="true"><a href="#">Geometría</a></li>
-										<li aria-haspopup="true"><a href="#">Trigonometría</a></li>
-									</ul>
-								</li>
-								<li aria-haspopup="true"><a href="#"><span><i class="fa fa-square-o"></i>Física<i class="fa fa-angle-down ml-1 m-0"></i></span></a>
-									<ul class="sub-menu">
-										<li aria-haspopup="true"><a href="#">Física preuniversitario</a></li>
-										<li aria-haspopup="true"><a href="#">Física universitario</a></li>
-									</ul>
-								</li>
-								<li aria-haspopup="true"><a href="#"><span><i class="fa fa-code"></i>Programación<i class="fa fa-angle-down  ml-1 m-0"></i></span></a>
-									<ul class="sub-menu">
-										<li aria-haspopup="true"><a href="#">Python</a></li>
-										<li aria-haspopup="true"><a href="#">Java</a></li>
-
-									</ul>
-								</li>
-								<li aria-haspopup="true"><a href="#"><span><i class="fa fa-globe"></i>Acerca de <i class="fa fa-angle-down m-0"></i></span></a>
-									<ul class="sub-menu">
-										<li aria-haspopup="true"><a href="#">Contáctenos</a></li>
-										<li aria-haspopup="true"><a href="#">Preguntas frecuentes</a></li>
-										<li aria-haspopup="true"><a href="#">Términos y condiciones</a></li>
-									</ul>
-								</li>
-							</ul>
-							<ul class="mb-0 d-flex">
-								<li aria-haspopup="true" class="mt-2 d-none d-lg-block  mr-3">
-									<span><a class="btn btn-warning ad-post" href="#"><i class="fe fe-shopping-cart mr-1"></i>Buy Now</a></span>
-								</li>
-								<li aria-haspopup="true" class="mt-2 d-none d-lg-block ">
-									<span><a class="btn btn-success ad-post" href="#"><i class="fe fe-share mr-1"></i>Enseña gratis</a></span>
-								</li>
-							</ul>
-						</nav>
-						<!--Nav-->
-					</div>
-				</div>
-			</div>
-			<!-- /Horizontal-navigation -->
-		</div>
-
-        {% block content %}
-
-        {% endblock %}
+                                        <a class="dropdown-item" href="{% url 'logout' %}">
+                                            <i class="dropdown-icon icon icon-power"></i> Cerrar sesión
+                                        </a>
+                                    </div>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="{% url 'login' %}" class="text-dark"><i
+                                            class="fa fa-sign-in mr-1 login-details"></i> <span>Inicia sesión</span></a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'register' %}" class="text-dark"><i
+                                            class="fa fa-user mr-1 login-details"></i><span>Regístrate</span></a>
+                                </li>
+                            {% endif %}
 
 
-		<!--Footer-->
-		<section>
-			<footer class="bg-dark text-white">
-				<div class="footer-main border-bottom">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-3 col-md-12 footer-about">
-								<h6>Acerca de</h6>
-								<p class="mb-1">En nuestro sitio puedes agendar una clase con el mejor docente y reforzar tus aprendizajes.</p>
-							</div>
-							<div class="col-lg-3 col-md-12">
-								<h6>Contáctenos</h6>
-								<ul class="list-unstyled mb-0">
-									<li>
-										<a href="#"><i class="fa fa-home mr-3 text-primary"></i> Ayacucho - Perú</a>
-									</li>
-									<li>
-										<a href="#"><i class="fa fa-envelope mr-3 text-primary"></i> contacto@unsch.edu.pe</a></li>
-									<li>
-										<a href="#"><i class="fa fa-phone mr-3 text-primary"></i> 925923244</a>
-									</li>
-								</ul>
-								<ul class="list-unstyled list-inline mt-2">
-									<li class="list-inline-item">
-									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-										<i class="fa fa-facebook"></i>
-									  </a>
-									</li>
-									<li class="list-inline-item">
-									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-										<i class="fa fa-twitter"></i>
-									  </a>
-									</li>
-									<li class="list-inline-item">
-									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-										<i class="fa fa-google-plus"></i>
-									  </a>
-									</li>
-									<li class="list-inline-item">
-									  <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
-										<i class="fa fa-linkedin"></i>
-									  </a>
-									</li>
-								</ul>
-							</div>
-							<div class="col-lg-3 col-md-12">
-								<h6>Para el usuaior</h6>
-								<ul class="list-unstyled mb-0">
-									<li><a href="#"><i class="typcn typcn-chevron-right-outline mr-1"></i>Ingresa</a></li>
-									<li><a href="#"><i class="typcn typcn-chevron-right-outline mr-1"></i>Regístrate</a></li>
-									<li><a href="#"><i class="typcn typcn-chevron-right-outline mr-1"></i>Mis clases</a></li>
-									<li><a href="#"><i class="typcn typcn-chevron-right-outline mr-1"></i>Mis calificaciones</a></li>
-								</ul>
-							</div>
-							<div class="col-lg-3 col-md-12">
-								<h6 class="">Suscríbete</h6>
-								<div class="input-group ">
-									<input type="text" class="form-control" placeholder="Email">
-									<div class="input-group-append  ">
-										<button type="button" class="btn btn-primary">
-											Suscríbete
-										</button>
-									</div>
-								</div>
-								<h6 class="mb-2 mt-6">Métodos de pago</h6>
-								<ul class="payments mb-0">
-									<li>
-										<a href="javascript:;" class="payments-icon"><i class="fa fa-cc-amex" aria-hidden="true"></i></a>
-									</li>
-									<li>
-										<a href="javascript:;" class="payments-icon"><i class="fa fa-cc-visa" aria-hidden="true"></i></a>
-									</li>
-									<li>
-										<a href="javascript:;" class="payments-icon"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></a>
-									</li>
-									<li>
-										<a href="javascript:;" class="payments-icon"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a>
-									</li>
-									<li>
-										<a href="javascript:;" class="payments-icon"><i class="fa fa-cc-paypal" aria-hidden="true"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-				<div class="bg-primary primary-gradient text-white p-1">
-					<div class="container">
-						<div class="row d-flex">
-							<div class="col-lg-12 col-sm-12  mt-2 mb-2 text-center ">
-								Copyright © 2021 <a href="#" class="fs-14 text-success-1">ProfeU</a>. Desarrollado por <a href="·" class="fs-14 text-success-1">Frank Lopez</a> Todos los derechos reservados.
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</section>
-		<!--Footer Section-->
+    <!-- Mobile Header -->
+    <div class="horizontal-header clearfix ">
+        <div class="container">
+            <a id="horizontal-navtoggle" class="animated-arrow"><span></span></a>
+            <span class="smllogo"><img src="{% static 'frontend/images/brand/logo.png' %}" width="120" alt=""/></span>
+            <a href="tel:245-6325-3256" class="callusbtn"><i class="fa fa-phone" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <!-- /Mobile Header -->
 
-		<!-- Back to top -->
-		<a href="#top" id="back-to-top" ><i class="fa fa-rocket"></i></a>
+    <!-- Horizontal-navigation -->
+    <div class="sticky">
+        <div class="header-style horizontal-main  bg-dark-transparent clearfix">
+            <div class="horizontal-mainwrapper container clearfix">
+                <!--Nav-->
+                <nav class="horizontalMenu clearfix d-md-flex">
+                    <ul class="horizontalMenu-list">
+                        <li aria-haspopup="true"><a href="#"><span><i class="fa fa-home"></i>Inicio </span></a>
 
-		<!-- JQuery js-->
-		<script src="{% static 'frontend/js/vendors/jquery-3.2.1.min.js' %}"></script>
+                        </li>
+                        <li aria-haspopup="true"><a href="#"><span><i class="fa fa-calculator"></i>Matemática<i
+                                class="fa fa-angle-down ml-1 m-0"></i></span></a>
+                            <ul class="sub-menu">
+                                <li aria-haspopup="true"><a href="#">Raz. Matemático </a></li>
+                                <li aria-haspopup="true"><a href="#">Álgebra</a></li>
+                                <li aria-haspopup="true"><a href="#">Geometría</a></li>
+                                <li aria-haspopup="true"><a href="#">Trigonometría</a></li>
+                            </ul>
+                        </li>
+                        <li aria-haspopup="true"><a href="#"><span><i class="fa fa-square-o"></i>Física<i
+                                class="fa fa-angle-down ml-1 m-0"></i></span></a>
+                            <ul class="sub-menu">
+                                <li aria-haspopup="true"><a href="#">Física preuniversitario</a></li>
+                                <li aria-haspopup="true"><a href="#">Física universitario</a></li>
+                            </ul>
+                        </li>
+                        <li aria-haspopup="true"><a href="#"><span><i class="fa fa-code"></i>Programación<i
+                                class="fa fa-angle-down  ml-1 m-0"></i></span></a>
+                            <ul class="sub-menu">
+                                <li aria-haspopup="true"><a href="#">Python</a></li>
+                                <li aria-haspopup="true"><a href="#">Java</a></li>
 
-		<!-- Bootstrap js -->
-		<script src="{% static 'frontend/plugins/bootstrap/js/popper.min.js' %}"></script>
-		<script src="{% static 'frontend/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+                            </ul>
+                        </li>
+                        <li aria-haspopup="true"><a href="#"><span><i class="fa fa-globe"></i>Acerca de <i
+                                class="fa fa-angle-down m-0"></i></span></a>
+                            <ul class="sub-menu">
+                                <li aria-haspopup="true"><a href="#">Contáctenos</a></li>
+                                <li aria-haspopup="true"><a href="#">Preguntas frecuentes</a></li>
+                                <li aria-haspopup="true"><a href="#">Términos y condiciones</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="mb-0 d-flex">
+                        <li aria-haspopup="true" class="mt-2 d-none d-lg-block  mr-3">
+                            <span><a class="btn btn-warning ad-post" href="#"><i class="fe fe-shopping-cart mr-1"></i>Buy Now</a></span>
+                        </li>
+                        <li aria-haspopup="true" class="mt-2 d-none d-lg-block ">
+                            <span><a class="btn btn-success ad-post" href="#"><i class="fe fe-share mr-1"></i>Enseña gratis</a></span>
+                        </li>
+                    </ul>
+                </nav>
+                <!--Nav-->
+            </div>
+        </div>
+    </div>
+    <!-- /Horizontal-navigation -->
+</div>
 
-		<!-- JQuery Sparkline Js-->
-		<script src="{% static 'frontend/js/vendors/jquery.sparkline.min.js' %}"></script>
+{% block content %}
 
-		<!-- Circle Progress Js-->
-		<script src="{% static 'frontend/js/vendors/circle-progress.min.js' %}"></script>
+{% endblock %}
 
-		<!-- Star Rating Js-->
-		<script src="{% static 'frontend/plugins/rating/jquery.rating-stars.js' %}"></script>
 
-		<!-- Owl Carousel js -->
-		<script src="{% static 'frontend/plugins/owl-carousel/owl.carousel.js' %}"></script>
+<!--Footer-->
+<section>
+    <footer class="bg-dark text-white">
+        <div class="footer-main border-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 footer-about">
+                        <h6>Acerca de</h6>
+                        <p class="mb-1">En nuestro sitio puedes agendar una clase con el mejor docente y reforzar tus
+                            aprendizajes.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <h6>Contáctenos</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#"><i class="fa fa-home mr-3 text-primary"></i> Ayacucho - Perú</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-envelope mr-3 text-primary"></i> contacto@unsch.edu.pe</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-phone mr-3 text-primary"></i> 925923244</a>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled list-inline mt-2">
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-sm rgba-white-slight mx-1 waves-effect waves-light">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <h6>Para el usuaior</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="#"><i class="typcn typcn-chevron-right-outline mr-1"></i>Ingresa</a></li>
+                            <li><a href="#"><i class="typcn typcn-chevron-right-outline mr-1"></i>Regístrate</a></li>
+                            <li><a href="#"><i class="typcn typcn-chevron-right-outline mr-1"></i>Mis clases</a></li>
+                            <li><a href="#"><i class="typcn typcn-chevron-right-outline mr-1"></i>Mis calificaciones</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <h6 class="">Suscríbete</h6>
+                        <div class="input-group ">
+                            <input type="text" class="form-control" placeholder="Email">
+                            <div class="input-group-append  ">
+                                <button type="button" class="btn btn-primary">
+                                    Suscríbete
+                                </button>
+                            </div>
+                        </div>
+                        <h6 class="mb-2 mt-6">Métodos de pago</h6>
+                        <ul class="payments mb-0">
+                            <li>
+                                <a href="javascript:;" class="payments-icon"><i class="fa fa-cc-amex"
+                                                                                aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="payments-icon"><i class="fa fa-cc-visa"
+                                                                                aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="payments-icon"><i class="fa fa-credit-card-alt"
+                                                                                aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="payments-icon"><i class="fa fa-cc-mastercard"
+                                                                                aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="payments-icon"><i class="fa fa-cc-paypal"
+                                                                                aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<!-- Horizontal Menu-->
-		<script src="{% static 'frontend/plugins/Horizontal2/Horizontal-menu/horizontal.js' %}"></script>
+        <div class="bg-primary primary-gradient text-white p-1">
+            <div class="container">
+                <div class="row d-flex">
+                    <div class="col-lg-12 col-sm-12  mt-2 mb-2 text-center ">
+                        Copyright © 2021 <a href="#" class="fs-14 text-success-1">ProfeU</a>. Desarrollado por <a
+                            href="·" class="fs-14 text-success-1">Frank Lopez</a> Todos los derechos reservados.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<!--Footer Section-->
 
-		<!-- JQuery TouchSwipe js-->
-		<script src="{% static 'frontend/js/jquery.touchSwipe.min.js' %}"></script>
+<!-- Back to top -->
+<a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>
 
-		<!-- Select2 js -->
-		<script src="{% static 'frontend/plugins/select2/select2.full.min.js' %}"></script>
-		<script src="{% static 'frontend/js/select2.js' %}"></script>
+<!-- JQuery js-->
+<script src="{% static 'frontend/js/vendors/jquery-3.2.1.min.js' %}"></script>
 
-		<!-- Cookie js -->
-		<script src="{% static 'frontend/plugins/cookie/jquery.ihavecookies.js' %}"></script>
-		<script src="{% static 'frontend/plugins/cookie/cookie.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{% static 'frontend/plugins/bootstrap/js/popper.min.js' %}"></script>
+<script src="{% static 'frontend/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
 
-		<!-- Custom scroll bar Js-->
-		<script src="{% static 'frontend/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<!-- JQuery Sparkline Js-->
+<script src="{% static 'frontend/js/vendors/jquery.sparkline.min.js' %}"></script>
 
-		<!-- sticky Js-->
-		<script src="{% static 'frontend/js/sticky.js' %}"></script>
+<!-- Circle Progress Js-->
+<script src="{% static 'frontend/js/vendors/circle-progress.min.js' %}"></script>
 
-		<!-- Carousel js -->
-		<script src="{% static 'frontend/js/carousel.js' %}"></script>
+<!-- Star Rating Js-->
+<script src="{% static 'frontend/plugins/rating/jquery.rating-stars.js' %}"></script>
 
-		<!-- Swipe Js-->
-		<script src="{% static 'frontend/js/swipe.js' %}"></script>
+<!-- Owl Carousel js -->
+<script src="{% static 'frontend/plugins/owl-carousel/owl.carousel.js' %}"></script>
 
-		<!-- Custom Js-->
-		<script src="{% static 'frontend/js/custom.js' %}"></script>
-	</body>
+<!-- Horizontal Menu-->
+<script src="{% static 'frontend/plugins/Horizontal2/Horizontal-menu/horizontal.js' %}"></script>
+
+<!-- JQuery TouchSwipe js-->
+<script src="{% static 'frontend/js/jquery.touchSwipe.min.js' %}"></script>
+
+<!-- Select2 js -->
+<script src="{% static 'frontend/plugins/select2/select2.full.min.js' %}"></script>
+<script src="{% static 'frontend/js/select2.js' %}"></script>
+
+<!-- Cookie js -->
+<script src="{% static 'frontend/plugins/cookie/jquery.ihavecookies.js' %}"></script>
+<script src="{% static 'frontend/plugins/cookie/cookie.js' %}"></script>
+
+<!-- Custom scroll bar Js-->
+<script src="{% static 'frontend/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+<!-- sticky Js-->
+<script src="{% static 'frontend/js/sticky.js' %}"></script>
+
+<!-- Carousel js -->
+<script src="{% static 'frontend/js/carousel.js' %}"></script>
+
+<!-- Swipe Js-->
+<script src="{% static 'frontend/js/swipe.js' %}"></script>
+
+<!-- Custom Js-->
+<script src="{% static 'frontend/js/custom.js' %}"></script>
+</body>
 </html>

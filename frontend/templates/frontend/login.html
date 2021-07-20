@@ -6,53 +6,63 @@
 {% load static %}
 {% block content %}
     <!--Sliders Section-->
-		<section>
-			<div class="bannerimg cover-image background-size bg-background3" data-image-src="../../assets/images/banners/banner6.png">
-				<div class="header-text mb-0">
-					<div class="container">
-						<div class="text-center text-white">
-							<h1 class="">Iniciar sesion</h1>
-							<ol class="breadcrumb text-center">
-								<li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                            	<li class="breadcrumb-item"><a href="#">Pagina</a></li>
-                            	<li class="breadcrumb-item active text-white" aria-current="page">Registro</li>
-							</ol>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section>
+        <div class="bannerimg cover-image background-size bg-background3"
+             data-image-src="../../assets/images/banners/banner6.png">
+            <div class="header-text mb-0">
+                <div class="container">
+                    <div class="text-center text-white">
+                        <h1 class="">Iniciar sesion</h1>
+                        <ol class="breadcrumb text-center">
+                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pagina</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Registro</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
-		<section class="sptb">
-			<div class="container customerpage">
-				<div class="row">
-					<div class="single-page" >
-						<div class="col-lg-5 col-xl-4 col-md-6 d-block mx-auto">
-							<div class="wrapper wrapper2">
-								<form id="login" class="card-body" tabindex="500">
-									<h3>Iniciar sesion</h3>
-									<div class="mail">
-										<input type="email" name="mail">
-										<label>Correo electronico</label>
-									</div>
-									<div class="passwd">
-										<input type="password" name="password">
-										<label>Contraseña</label>
-									</div>
-									<div class="submit">
-										<a class="btn btn-primary btn-block" href="index.html">Iniciar sesion</a>
-									</div>
-									<p class="mb-2"><a href="forgot.html" >Olvidaste tu contraseña?</a></p>
-									<p class="text-dark mb-0">No tienes una cuenta?<a href="{% url 'register' %}" class="text-primary ml-1">Registrate</a></p>
-								</form>
+    <section class="sptb">
+        <div class="container customerpage">
+            <div class="row">
+                <div class="single-page">
+                    <div class="col-lg-5 col-xl-4 col-md-6 d-block mx-auto">
+                        <div class="wrapper wrapper2">
+                            <form id="login" class="card-body" tabindex="500" method="post">
+                                {% csrf_token %}
+                                {% for error in errors %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                                <h3>Iniciar sesion</h3>
+                                <div class="mail">
+                                    {{ form.email }}
 
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--/Login-Section-->
+                                    <label>Correo electronico</label>
+                                </div>
+                                <div class="passwd">
+                                    {{ form.password }}
+                                    <label>Contraseña</label>
+                                </div>
+                                <div class="submit">
+                                    <input class="btn btn-primary btn-block" type="submit" value="Iniciar sesión">
+                                </div>
+                                <p class="mb-2"><a href="#">Olvidaste tu contraseña?</a></p>
+                                <p class="text-dark mb-0">No tienes una cuenta?<a href="{% url 'register' %}"
+                                                                                  class="text-primary ml-1">Registrate</a>
+                                </p>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/Login-Section-->
 {% endblock %}

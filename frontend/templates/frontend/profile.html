@@ -1,0 +1,147 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+    {{ teacher.user.user.first_name }} {{ teacher.user.user.last_name }}
+{% endblock %}
+{% load static %}
+{% block content %}
+
+    <section class="sptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body ">
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-xl-8 col-lg-8 col-md-8">
+                                        <div class="profile-pic mb-0">
+                                            <div class="d-md-flex"><img
+                                                    src="{{ teacher.image.url }}"
+                                                    class="w-125 h-125 br-2" alt="user">
+                                                <div class="ml-4 mt-5">
+                                                    <a href="#" class="text-dark">
+                                                        <h2
+                                                                class="mt-1 mb-1 ">{{ teacher.user.user.first_name }} {{ teacher.user.user.last_name }}<small
+                                                                class="text-muted text-small fs-13 ml-2">en {{ teacher.category.name }}</small>
+                                                        </h2>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 mt-xl-7 mt-0">
+                                        <h6 class=" mb-0">
+                                            <a href="{% url 'book' teacher.id %}" class="btn btn-primary ">
+                                                <i class="fa fa-book mr-1"></i>Reservar Ahora</a>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="wideget-user-tab">
+                                <div class="tab-menu-heading">
+                                    <div class="tabs-menu1">
+                                        <ul class="nav">
+                                            <li class=""><a href="#tab-5" class="active"
+                                                            data-toggle="tab">Descripción</a>
+                                            </li>
+                                            <li><a href="#tab-7" data-toggle="tab" class="">Comentarios <span
+                                                    class="badge badge-primary badge-pill">20</span></a></li>
+                                            <li><a href="#tab-9" data-toggle="tab" class="">Precio <span
+                                                    class="badge badge-primary badge-pill">01</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <div class="border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab-5">
+                                        <div class="profile-log-switch">
+                                            <div class="">
+                                                <div class="media-heading"><h3 class="card-title mb-3 font-weight-bold">
+                                                    Más sobre el profesor</h3></div>
+                                                <div class="mb-4"><p>{{ teacher.description }}</p></div>
+                                                <h4 class="mb-4">Especialidades</h4>
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-md-12">
+                                                        <div class="table-responsive table-responsive-1">
+                                                            <table class="table row table-borderless w-100 m-0 text-nowrap ">
+                                                                <tbody class="col-lg-12 col-xl-6 p-0">
+                                                                <tr>
+                                                                    <td><span
+                                                                            class="font-weight-bold">Especialidad :</span>
+                                                                        {{ teacher.category.name }}
+                                                                    </td>
+                                                                </tr>
+
+                                                                </tbody>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane userprof-tab" id="tab-7">
+                                        <div class="media-heading"><h3 class="card-title mb-3 font-weight-bold">
+                                                    Comentarios</h3></div>
+                                    </div>
+
+                                    <div class="tab-pane userprof-tab" id="tab-9">
+                                        <div class="row">
+                                            <div class="col-xl-3 col-md-6 col-sm-12 col-lg-3">
+                                                <div class="card">
+                                                    <div class="card-header"><h3 class="card-title">Precios</h3></div>
+                                                    <div class="card-body">
+                                                        <ul class="list-unstyled widget-spec  mb-0">
+                                                            <li class=""><i class="fa fa-check text-success"
+                                                                            aria-hidden="true"></i> Flexibilidad
+                                                            </li>
+                                                            <li class=""><i class="fa fa-check text-success"
+                                                                            aria-hidden="true"></i> Videos grabado
+                                                            </li>
+                                                            <li class=""><i class="fa fa-check text-success"
+                                                                            aria-hidden="true"></i> Devoluciones
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-md-6 col-sm-12 col-lg-3">
+                                                <div class="pricingTable2 pink">
+                                                    <div class="pricingTable2-header"><h3>Clase</h3> <span>A través de Meet</span>
+                                                    </div>
+                                                    <div class="pricing-plans"><span class="price-value1"><i
+                                                            class="fa fa-money"></i><span>S/ {{ teacher.ammount }}</span></span> <span
+                                                            class="month">/hora</span></div>
+                                                    <div class="pricingContent2">
+                                                        <ul>
+                                                            <li>Preguntas</li>
+                                                            <li>Clases grabados</li>
+                                                            <li>Flexibilidad</li>
+                                                        </ul>
+                                                    </div><!-- CONTENT BOX-->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

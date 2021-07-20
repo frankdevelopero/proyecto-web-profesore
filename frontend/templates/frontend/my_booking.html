@@ -1,0 +1,145 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+    Mis clases
+{% endblock %}
+{% load static %}
+{% block content %}
+    <!--Sliders Section-->
+    <section>
+        <div class="bannerimg cover-image background-size bg-background3"
+             data-image-src="../../assets/images/banners/banner6.png">
+            <div class="header-text mb-0">
+                <div class="container">
+                    <div class="text-center text-white">
+                        <h1 class="">Mis clases</h1>
+                        <ol class="breadcrumb text-center">
+                            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="#">Pagina</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Mis clases</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sptb">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header"><h3 class="card-title">Mi cuenta</h3></div>
+                        <div class="card-body text-center item-user ">
+                            <div class="profile-pic">
+                                <div class="profile-pic-img"><span class="bg-success dots" data-toggle="tooltip"
+                                                                   data-placement="top" title=""
+                                                                   data-original-title="online"></span> <img
+                                        src="{% static 'frontend/images/users/photo.jpg' %}" class="brround" alt="user">
+                                </div>
+                                <a href="#" class="text-dark"><h4 class="mt-3 mb-0 font-weight-semibold">
+                                    {{ request.user.first_name }} {{ request.user.last_name }}</h4></a></div>
+                        </div>
+                        <aside class="app-sidebar doc-sidebar my-dash">
+                            <div class="app-sidebar__user clearfix">
+                                <ul class="side-menu">
+                                    <li><a class="side-menu__item" href="{% url 'dashboard' %}"><i
+                                            class="icon icon-user"></i><span
+                                            class="side-menu__label ml-2">Mi cuenta</span></a></li>
+                                    <li class="active"><a class="side-menu__item active" href="#"><i
+                                            class="icon icon-diamond"></i><span
+                                            class="side-menu__label ml-2">Mis clases</span></a></li>
+
+                                    <li><a class="side-menu__item" href="login.html">
+                                        <i
+                                                class="icon icon-power"></i><span
+                                            class="side-menu__label ml-2">Cerrar sesión</span></a></li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+
+                </div>
+                <div class="col-xl-9 col-lg-12 col-md-12">
+                    <div class="card mb-0">
+                        <div class="card-header"><h3 class="card-title">Mis clases</h3></div>
+                        <div class="card-body">
+                            <div class="ads-tabs">
+                                <div class="tabs-menus"> <!-- Tabs -->
+                                    <ul class="nav panel-tabs">
+                                        <li class=""><a href="#tab1" class="active" data-toggle="tab">Todas mis
+                                            clases </a>
+                                        </li>
+                                        <li><a href="#tab2" data-toggle="tab">Pendientes (08)</a></li>
+                                        <li><a href="#tab3" data-toggle="tab">Realizadas (05)</a></li>
+                                        <li><a href="#tab4" data-toggle="tab">Canceladas (03)</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane active table-responsive border-top userprof-tab" id="tab1">
+                                        <table class="table table-bordered table-hover mb-0 text-nowrap">
+                                            <thead>
+                                            <tr>
+
+                                                <th>Profesor</th>
+                                                <th>Fecha</th>
+                                                <th>Precio</th>
+                                                <th>Estado</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for booking in bookings %}
+                                                <tr>
+
+                                                    <td>
+                                                        <div class="media mt-0 mb-0">
+                                                            <div class="card-aside-img mb-2"><a href="#"></a> <img
+                                                                    src="{{booking.teacher.image.url}}"
+                                                                    alt="img"></div>
+                                                            <div class="media-body">
+                                                                <div class="card-item-desc ml-4 p-0 "><a href="#"
+                                                                                                         class="text-dark">
+                                                                    <h4 class="font-weight-semibold">{{booking.teacher.user.user.first_name}} {{booking.teacher.user.user.last_name}}</h4></a>
+                                                                    <a
+                                                                            href="#"><i class="fa fa-clock-o mr-1"></i>
+                                                                        {{ booking.bookint_to}}</a><br>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>{{ booking.bookint_at}}</td>
+                                                    <td class="font-weight-semibold fs-16">S/ {{ booking.ammount }}</td>
+                                                    <td><a href="#" class="badge badge-primary">Confirmado</a></td>
+                                                    <td>
+                                                        <a class="btn btn-success btn-sm text-white"
+                                                           data-toggle="tooltip"
+                                                           data-original-title="Edit" href="edit-app.html"><i
+                                                            class="fa fa-pencil"></i></a>
+                                                        <a
+                                                            class="btn btn-danger btn-sm text-white"
+                                                            data-toggle="tooltip"
+                                                            data-original-title="Delete"><i
+                                                            class="fa fa-trash-o"></i></a>
+                                                         <a
+                                                                class="btn btn-primary btn-sm text-white"
+                                                                data-toggle="tooltip" data-original-title="View"><i
+                                                                class="fa fa-eye"></i></a></td>
+                                                </tr>
+                                            {% endfor %}
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
