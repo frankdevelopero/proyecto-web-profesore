@@ -2,22 +2,22 @@
 
  $(document).ready(function() {
         $('body').ihavecookies({
-            title: '&#x1F36A; Accept Cookies & Privacy Policy?',
-            message: 'There are no cookies used on this site, but if there were this message could be customised to provide more details. Click the <strong>accept</strong> button below to see the optional callback in action...',
+            title: '&#x1F36A; Aceptar cookies y política de privacidad?',
+            message: 'No se utilizan cookies en este sitio, pero si las hubiera, este mensaje podría personalizarse para proporcionar más detalles. Haga clic en el botón <strong>aceptar</strong> a continuación para ver la devolución de llamada opcional en acción ...',
             delay: 600,
             expires: 1,
             link: '#privacy',
             onAccept: function(){
                 var myPreferences = $.fn.ihavecookies.cookie();
-                console.log('Yay! The following preferences were saved...');
+                console.log('¡SI! Se guardaron las siguientes preferencias...');
                 console.log(myPreferences);
             },
             uncheckBoxes: true,
-            acceptBtnLabel: 'Accept Cookies',
-            moreInfoLabel: 'More information'
+            acceptBtnLabel: 'Aceptar',
+            moreInfoLabel: 'Más información'
         });
 
         if ($.fn.ihavecookies.preference('marketing') === true) {
-            console.log('This should run because marketing is accepted.');
+            console.log('Para Marketing.');
         }
     });
