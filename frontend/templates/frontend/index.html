@@ -30,6 +30,52 @@
             </div><!-- /header-text --> </div>
     </div>
 
+    <section class="sptb">
+        <div class="container">
+            <div class="section-title center-block text-center"><h2>Top <span>mejores</span> profesores</h2>
+                <p>Aprende con nuestros algunos mejores profesores de la semana</p></div>
+            <div id="myCarousel1" class="owl-carousel owl-carousel-icons2 owl-loaded owl-drag">
+                <div class="owl-stage-outer">
+                    <div class="owl-stage"
+                         style="transform: translate3d(-1501px, 0px, 0px); transition: all 0.25s ease 0s; width: 3904px;">
 
+                        {% for teacher in teachers %}
+                                <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
+                            <div class="item">
+                                <div class="card mb-0 overflow-hidden">
+                                    <div class="item-card7-imgs img-circle"><a href="{% url 'profile'  teacher.id %}"></a> <img
+                                            src="{{ teacher.image.url}}" alt="Dash"
+                                            class="  p-0"></div>
+                                    <div class="card-body">
+                                        <div class="item-card7-desc">
+                                            <div class="item-card7-text"><a href="{% url 'profile'  teacher.id %}"
+                                                                            class="text-dark text-header"><h4
+                                                    class="mb-1">{{ teacher.user.user.first_name }} {{ teacher.user.user.last_name }}</h4></a></div>
+                                            <ul class="item-cards7-ic software-list mb-0 mt-3">
+
+                                            </ul>
+                                            <p class="mb-0">{{ teacher.description|slice:"25" }}...</p>
+                                            <a href="{% url 'profile'  teacher.id %}" class="btn btn-primary mt-3">S/ {{ teacher.ammount }}
+                                                Reservar</a></div>
+                                    </div>
+                                    <div class="card-footer">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <div class="owl-nav">
+                    <button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span>
+                    </button>
+                    <button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
+                </div>
+                <div class="owl-dots disabled"></div>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}

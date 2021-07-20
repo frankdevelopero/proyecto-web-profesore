@@ -12,7 +12,11 @@ from frontend.models import CustomUser, Teacher, Bookin
 
 class IndexView(View):
     def get(self, request):
-        return render(request, 'frontend/index.html')
+        teachers = Teacher.objects.all()
+        context = {
+            'teachers': teachers
+        }
+        return render(request, 'frontend/index.html', context)
 
 
 class LoginView(View):
